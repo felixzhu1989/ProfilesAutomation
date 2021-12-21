@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ProfilesAutoDrawing.View"
              mc:Ignorable="d" 
              d:DesignHeight="769" d:DesignWidth="972">
-    <Grid>
+    <Grid Background="Aqua">
             
     </Grid>
 </UserControl>

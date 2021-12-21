@@ -31,8 +31,15 @@
                           ItemsSource="{Binding TreeProject}">
                     <TreeView.ItemContainerStyle>
                         <Style TargetType="{x:Type TreeViewItem}">
-                            <Setter Property="IsExpanded" Value="True"></Setter>
-                            <Setter Property="IsSelected" Value="{Binding IsSelected}"></Setter>
+                            <Setter Property="IsExpanded" Value="True"/>
+                            <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
+                            <Setter Property="ContextMenu">
+                                <Setter.Value>
+                                    <ContextMenu DataContext="{Binding Source={StaticResource Locator},Path=Main}">
+                                        <MenuItem Header="修改参数" Command="{Binding EditData}"/>
+                                    </ContextMenu>
+                                </Setter.Value>
+                            </Setter>
                         </Style>
                     </TreeView.ItemContainerStyle>
                     <TreeView.ItemTemplate>
@@ -50,8 +57,8 @@
                           ItemsSource="{Binding TreeType,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
                     <TreeView.ItemContainerStyle>
                         <Style TargetType="{x:Type TreeViewItem}">
-                            <Setter Property="IsExpanded" Value="True"></Setter>
-                            <Setter Property="IsSelected" Value="{Binding IsSelected}"></Setter>
+                            <Setter Property="IsExpanded" Value="True"/>
+                            <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
                         </Style>
                     </TreeView.ItemContainerStyle>
                     <TreeView.ItemTemplate>
@@ -66,7 +73,7 @@
                     Command="{Binding AutoDrawing}"/>
         </Grid>
         <StackPanel DockPanel.Dock="Right">
-
+            <ItemsControl></ItemsControl>
         </StackPanel>
     </DockPanel>
 </Window>

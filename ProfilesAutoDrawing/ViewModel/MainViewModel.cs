@@ -5,6 +5,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Newtonsoft.Json;
 using ProfilesAutoDrawing.Model;
+using ProfilesAutoDrawing.View;
 
 namespace ProfilesAutoDrawing.ViewModel
 {
@@ -72,7 +73,23 @@ namespace ProfilesAutoDrawing.ViewModel
 
         #endregion
 
+        #region 自定义控件
 
+
+
+        private TypeUView typeU;
+        /// <summary>
+        /// 用户控件模板列表
+        /// </summary>
+        public TypeUView TypeU
+        {
+            get => typeU;
+            set { typeU = value; RaisePropertyChanged(() => TypeU); }
+        }
+
+
+
+        #endregion
 
         #region 命令
         private RelayCommand loadProject;
@@ -104,6 +121,28 @@ namespace ProfilesAutoDrawing.ViewModel
         {
             projectPath = Path.Combine(_dir, ProjectName);
             if (!Directory.Exists(projectPath)) Directory.CreateDirectory(projectPath);
+        }
+
+        private RelayCommand editData;
+        public RelayCommand EditData
+        {
+            get
+            {
+                if (editData == null) return new RelayCommand(ExecuteEditData);
+                return editData;
+            }
+            set => editData = value;
+        }
+        //编辑参数
+        void ExecuteEditData()
+        {
+            foreach (TreeNodeModel item in TreeProject)
+            {
+                if (item.IsSelected)
+                {
+                    MessageBox.Show(item.NodeName);
+                }
+            }
         }
 
         private RelayCommand autoDrawing;
