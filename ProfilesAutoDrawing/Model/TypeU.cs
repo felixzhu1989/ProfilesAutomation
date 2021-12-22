@@ -5,7 +5,7 @@
         public double Length { get; set; }
         public double Width { get; set; }
         public double Height { get; set; }
-        public string TopViewEllipticalHole { get; set; }
+        public bool TopViewEllipticalHole { get; set; }
         public double TopViewHoleDia { get; set; }
         public double TopViewHoleY { get; set; }
         public double TopViewHoleX1 { get; set; }

@@ -35,8 +35,10 @@
                             <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
                             <Setter Property="ContextMenu">
                                 <Setter.Value>
-                                    <ContextMenu DataContext="{Binding Source={StaticResource Locator},Path=Main}">
+                                    <ContextMenu DataContext="{Binding Source={StaticResource Locator},
+                                        Path=Main}">
                                         <MenuItem Header="修改参数" Command="{Binding EditData}"/>
+                                        <MenuItem Header="删除参数" Command="{Binding DeleteData}"/>
                                     </ContextMenu>
                                 </Setter.Value>
                             </Setter>
@@ -44,7 +46,10 @@
                     </TreeView.ItemContainerStyle>
                     <TreeView.ItemTemplate>
                         <HierarchicalDataTemplate ItemsSource="{Binding Children}">
-                            <TextBlock Text="{Binding NodeName}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding NodeID}" Margin="0,0,5,0"></TextBlock>
+                                <TextBlock Text="{Binding NodeName}"/>
+                            </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>
                 </TreeView>
@@ -73,7 +78,117 @@
                     Command="{Binding AutoDrawing}"/>
         </Grid>
         <StackPanel DockPanel.Dock="Right">
-            <ItemsControl></ItemsControl>
+            <GroupBox Header="型材参数" Margin="2">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel.Resources>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="Orientation" Value="Horizontal" />
+                            <Setter Property="Margin" Value="0,0,0,2" />
+                        </Style>
+                        <Style TargetType="Label" 
+                               BasedOn="{StaticResource {x:Type Label}}">
+                            <Setter Property="Width" Value="70" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                            <Setter Property="HorizontalContentAlignment" Value="Right" />
+                        </Style>
+                        <Style TargetType="TextBox" 
+                               BasedOn="{StaticResource {x:Type TextBox}}">
+                            <Setter Property="Width" Value="80" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                        <Style TargetType="CheckBox" 
+                               BasedOn="{StaticResource {x:Type CheckBox}}">
+                            <Setter Property="Padding" Value="0,3" />
+                        </Style>
+                        <Style TargetType="RadioButton" 
+                               BasedOn="{StaticResource {x:Type RadioButton}}">
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                            <Setter Property="Padding" Value="0,3" />
+                            <Setter Property="Margin" Value="0,0,10,0" />
+                        </Style>
+                    </StackPanel.Resources>
+                    <StackPanel>
+                        <Label Content="长"></Label>
+                        <TextBox Text="{Binding TypeUData.Length}"/>
+                        <Label Content="宽"></Label>
+                        <TextBox Text="{Binding TypeUData.Width}"/>
+                        <Label Content="高"></Label>
+                        <TextBox Text="{Binding TypeUData.Height}"/>
+                        <Button Width="100" Content="保存参数" Margin="50,0,0,0"
+                                Background="DeepSkyBlue" BorderBrush="DeepSkyBlue" Foreground="White"
+                                Command="{Binding SaveData}"/>
+                    </StackPanel>
+                    <TextBlock Text="俯视图" Foreground="Blue"></TextBlock>
+                    <StackPanel>
+                        <StackPanel>
+                            <Label Content="板面椭圆孔"></Label>
+                            <RadioButton Content="有" IsChecked="{Binding TypeUData.TopViewEllipticalHole}"></RadioButton>
+                            <RadioButton Content="无"></RadioButton>
+                        </StackPanel>
+                        <Label Content="板面圆孔"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleDia}"/>
+                        <Label Content="Y"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleY}"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Content="X1"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleX1}"/>
+                        <Label Content="X2"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleX2}"/>
+                        <Label Content="X3"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleX3}"/>
+                        <Label Content="X4"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleX4}"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Content="X5"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleX5}"/>
+                        <Label Content="X6"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleX6}"/>
+                        <Label Content="X7"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleX7}"/>
+                        <Label Content="X8"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleX8}"/>
+                    </StackPanel> 
+                    <!--<StackPanel>
+                        <StackPanel>
+                            <Label Content="踏步穿板孔"></Label>
+                            <RadioButton Content="有" IsChecked="{Binding TypeUData.TopViewEllipticalHole}"></RadioButton>
+                            <RadioButton Content="无"></RadioButton>
+                        </StackPanel>
+                        <Label Content="大小"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleDia}"/>
+                        <Label Content="Y"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleY}"/>
+                        <Label Content="X1"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleX1}"/>
+                        <Label Content="X2"></Label>
+                        <TextBox Text="{Binding TypeUData.TopViewHoleX2}"/>
+                    </StackPanel>-->
+                    <TextBlock Text="后视图" Foreground="Blue"></TextBlock>
+                    <StackPanel>
+                        <Label Content="LX1"></Label>
+                        <TextBox Text="{Binding TypeUData.FrontViewHoleLeftX1}"/>
+                        <Label Content="LX2"></Label>
+                        <TextBox Text="{Binding TypeUData.FrontViewHoleLeftX2}"/>
+                        <Label Content="RX1"></Label>
+                        <TextBox Text="{Binding TypeUData.FrontViewHoleRightX1}"/>
+                        <Label Content="RX2"></Label>
+                        <TextBox Text="{Binding TypeUData.FrontViewHoleRightX2}"/>
+                    </StackPanel>
+                    <TextBlock Text="左视图" Foreground="Blue"></TextBlock>
+                    <StackPanel>
+                        <Label Content="LY1"></Label>
+                        <TextBox Text="{Binding TypeUData.LeftViewHoleLeftY1}"/>
+                        <Label Content="LY2"></Label>
+                        <TextBox Text="{Binding TypeUData.LeftViewHoleLeftY2}"/>
+                        <Label Content="RY1"></Label>
+                        <TextBox Text="{Binding TypeUData.LeftViewHoleRightY1}"/>
+                        <Label Content="RY2"></Label>
+                        <TextBox Text="{Binding TypeUData.LeftViewHoleRightY2}"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>
     </DockPanel>
 </Window>
