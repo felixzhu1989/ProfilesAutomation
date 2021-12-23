@@ -1,5 +1,8 @@
 ﻿namespace ProfilesAutoDrawing.Model
-{ 
+{
+    /// <summary>
+    /// 从0开始绘制模型，该方式已经废除
+    /// </summary>
     public class TypeU
     {
         public double Length { get; set; }

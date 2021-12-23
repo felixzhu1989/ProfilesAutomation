@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProfilesAutoDrawing.View
 {
     /// <summary>
-    /// TypeUView.xaml 的交互逻辑
+    /// ImportDataView.xaml 的交互逻辑
     /// </summary>
-    public partial class TypeUView : UserControl
+    public partial class ImportDataView : Window
     {
-        public TypeUView()
+        public ImportDataView()
         {
             InitializeComponent();
         }

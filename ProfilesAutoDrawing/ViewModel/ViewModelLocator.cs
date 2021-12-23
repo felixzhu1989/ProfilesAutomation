@@ -11,6 +11,7 @@ namespace ProfilesAutoDrawing.ViewModel
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<ImportDataViewModel>();
 
 
 
@@ -18,7 +19,7 @@ namespace ProfilesAutoDrawing.ViewModel
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
-
+        public ImportDataViewModel ImportData=>ServiceLocator.Current.GetInstance<ImportDataViewModel>();
 
 
 

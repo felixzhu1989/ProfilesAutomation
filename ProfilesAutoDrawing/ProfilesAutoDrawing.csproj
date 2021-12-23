@@ -81,22 +81,30 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="Model\ImportDataFormExcel.cs" />
+    <Compile Include="Model\ImportDataModel.cs" />
+    <Compile Include="Model\OleDbHelper.cs" />
     <Compile Include="Model\TreeNodeModel.cs" />
     <Compile Include="Model\TypeU.cs" />
+    <Compile Include="SolidWorksHelper\AutoDrawing.cs" />
     <Compile Include="SolidWorksHelper\ConnectSolidWorks.cs" />
+    <Compile Include="SolidWorksHelper\AutoDrawingContext.cs" />
+    <Compile Include="SolidWorksHelper\EAutoDrawing.cs" />
     <Compile Include="SolidWorksHelper\SldWorksExtension.cs" />
     <Compile Include="SolidWorksHelper\TypeUAutoDrawing.cs" />
+    <Compile Include="SolidWorksHelper\UAutoDrawing.cs" />
+    <Compile Include="ViewModel\ImportDataViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\ImportDataView.xaml.cs">
+      <DependentUpon>ImportDataView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\TypeUView.xaml.cs">
-      <DependentUpon>TypeUView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -128,13 +136,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Page Include="View\MainView.xaml">
+    <Resource Include="DataSources\profiles.ico" />
+    <Resource Include="DataSources\profiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\ImportDataView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TypeUView.xaml">
+    <Page Include="View\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

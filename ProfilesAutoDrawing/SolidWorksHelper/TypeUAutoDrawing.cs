@@ -4,7 +4,9 @@ using SolidWorks.Interop.swconst;
 
 namespace ProfilesAutoDrawing.SolidWorksHelper
 {
-    
+    /// <summary>
+    /// 从0开始绘制模型，该方式已经废除
+    /// </summary>
     public class TypeUAutoDrawing
     {
         SldWorks swApp = ConnectSolidWorks.GetApplication();
