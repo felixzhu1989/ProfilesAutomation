@@ -4,6 +4,9 @@ using GalaSoft.MvvmLight.Ioc;
 
 namespace ProfilesAutoDrawing.ViewModel
 {
+    /// <summary>
+    /// MVVM
+    /// </summary>
     public class ViewModelLocator
     {
         public ViewModelLocator()

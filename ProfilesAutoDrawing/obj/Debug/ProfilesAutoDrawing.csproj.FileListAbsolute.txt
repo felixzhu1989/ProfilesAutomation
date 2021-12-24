@@ -59,6 +59,8 @@ E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDra
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.CoreCompileInputs.cache
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.exe
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.pdb
-E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.AssemblyReference.cache
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\View\ImportDataView.g.cs
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\View\ImportDataView.baml
+E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.AssemblyReference.cache
+E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\DataSources\数据模版.xlsx
+E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\DataSources\标准型材库\U.SLDPRT

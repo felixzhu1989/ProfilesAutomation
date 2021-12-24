@@ -125,8 +125,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DataSources\U150-K%28200%292697.SLDPRT" />
-    <None Include="DataSources\测试U板.xlsx" />
+    <None Include="DataSources\数据模版.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\标准型材库\E.SLDPRT" />
+    <None Include="DataSources\标准型材库\U.SLDPRT">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

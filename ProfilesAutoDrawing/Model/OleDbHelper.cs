@@ -4,6 +4,9 @@ using System.Data.OleDb;
 
 namespace ProfilesAutoDrawing.Model
 {
+    /// <summary>
+    /// 提供Excel数据访问支持
+    /// </summary>
     public class OleDbHelper
     {
         private static string connString =
@@ -22,7 +25,6 @@ namespace ProfilesAutoDrawing.Model
             }
             catch (Exception ex)
             {
-                //写入日志
                 throw ex;
             }
             finally

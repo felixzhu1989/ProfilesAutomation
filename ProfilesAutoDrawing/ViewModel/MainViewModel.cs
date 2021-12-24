@@ -11,6 +11,9 @@ using ProfilesAutoDrawing.SolidWorksHelper;
 
 namespace ProfilesAutoDrawing.ViewModel
 {
+    /// <summary>
+    /// 第一版的窗口逻辑，已经废弃
+    /// </summary>
     public class MainViewModel : ViewModelBase
     {
         #region 参考资料

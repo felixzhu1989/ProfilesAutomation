@@ -18,11 +18,13 @@
                   >
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Excel文件地址："/>
-                <TextBlock Width="500" Text="{Binding ExcelPath}"/>
-                <Button Content="浏览Excel文件" Background="DeepSkyBlue" BorderBrush="DeepSkyBlue"
+                <TextBlock Width="600" Text="{Binding ExcelPath}"/>
+                <Button Content="浏览Excel文件" 
+                        Background="DeepSkyBlue" BorderBrush="DeepSkyBlue"
                         Foreground="White" Width="100" Margin="10,0,5,0"
                         Command="{Binding ImportExcel}"/>
-                <Button Content="自动绘图" Background="Green" BorderBrush="Green"
+                <Button Content="自动绘图" 
+                        Background="Green" BorderBrush="Green"
                         Foreground="White" Width="100" Margin="5,0,5,0"
                         Command="{Binding AutoDrawing}"/>
             </StackPanel>

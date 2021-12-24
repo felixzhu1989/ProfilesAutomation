@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
+using GalaSoft.MvvmLight;
 
 namespace ProfilesAutoDrawing.Model
 {
@@ -40,6 +41,13 @@ namespace ProfilesAutoDrawing.Model
         public double TopTbY { get; set; }
         public double TopTbX1 { get; set; }
         public double TopTbX2 { get; set; }
+
+        //前视
+        public double FrontHoleLeftX1 { get; set; }
+        public double FrontHoleLeftX2 { get; set; }
+        public double FrontHoleRightX1 { get; set; }
+        public double FrontHoleRightX2 { get; set; }
+
         //U板
         //后视图孔
         public double UBackHoleLeftX1 { get; set; }
@@ -51,17 +59,23 @@ namespace ProfilesAutoDrawing.Model
         public double ULeftHoleFrontY2 { get; set; }
         public double ULeftHoleBackY1 { get; set; }
         public double ULeftHoleBackY2 { get; set; }
+        //右视图孔
+        public double URightHoleFrontY1 { get; set; }
+        public double URightHoleFrontY2 { get; set; }
+        public double URightHoleBackY1 { get; set; }
+        public double URightHoleBackY2 { get; set; }
+
         //E板
         //俯视
         public double ETopHoleLeftX1 { get; set; }
         public double ETopHoleLeftX2 { get; set; }
         public double ETopHoleRightX1 { get; set; }
         public double ETopHoleRightX2 { get; set; }
-        //前视
-        public double EFrontHoleLeftX1 { get; set; }
-        public double EFrontHoleLeftX2 { get; set; }
-        public double EFrontHoleRightX1 { get; set; }
-        public double EFrontHoleRightX2 { get; set; }
+        
+        //如果有扩展在这里加数据，同时ImportDataFormExcel.cs也要增加数据
+
+
+
 
 
     }

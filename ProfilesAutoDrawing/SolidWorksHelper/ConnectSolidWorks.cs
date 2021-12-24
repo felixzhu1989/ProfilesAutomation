@@ -3,6 +3,9 @@ using SolidWorks.Interop.sldworks;
 
 namespace ProfilesAutoDrawing.SolidWorksHelper
 {
+    /// <summary>
+    /// 连接SolidWorks程序，不要修改
+    /// </summary>
    public class ConnectSolidWorks
    {
        private static SldWorks swApp;

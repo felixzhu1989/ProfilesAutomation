@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Windows;
-using System.Windows.Navigation;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Microsoft.Win32;
@@ -13,6 +9,9 @@ using ProfilesAutoDrawing.SolidWorksHelper;
 
 namespace ProfilesAutoDrawing.ViewModel
 {
+    /// <summary>
+    /// 这里是界面背后的逻辑代码
+    /// </summary>
     public class ImportDataViewModel : ViewModelBase
     {
         //构造函数，初始化数据
@@ -21,7 +20,7 @@ namespace ProfilesAutoDrawing.ViewModel
             ImportDataList = new List<ImportDataModel>();
         }
 
-        #region 数据
+        #region 文本框和列表绑定的数据
         private string excelPath;
         public string ExcelPath
         {
@@ -37,7 +36,7 @@ namespace ProfilesAutoDrawing.ViewModel
         }
         #endregion
 
-        #region 命令
+        #region 按钮对应的命令
         private RelayCommand importExcel;
         public RelayCommand ImportExcel
         {
@@ -48,7 +47,7 @@ namespace ProfilesAutoDrawing.ViewModel
             }
             set => importExcel = value;
         }
-        //自动绘图
+        //导入Excel数据
         void ExecuteImportExcel()
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -72,12 +71,15 @@ namespace ProfilesAutoDrawing.ViewModel
             }
             set => autoDrawing = value;
         }
-        //自动绘图
+        //执行自动绘图入口，将数据列表和excel所在的文件夹地址传递给作图程序
         void ExecuteAutoDrawing()
         {
-            //
-
+            if(!File.Exists(ExcelPath))return;
+            string filePath = Path.GetDirectoryName(ExcelPath);
+            AutoDrawingContext context=new AutoDrawingContext(ImportDataList, filePath);
+            context.ContextInterface();
             MessageBox.Show("绘图完成！");
+            System.Diagnostics.Process.Start("explorer.exe", filePath);
         }
 
         #endregion

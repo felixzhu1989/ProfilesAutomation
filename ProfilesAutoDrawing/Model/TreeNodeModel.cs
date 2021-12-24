@@ -3,6 +3,9 @@ using GalaSoft.MvvmLight;
 
 namespace ProfilesAutoDrawing.Model
 {
+    /// <summary>
+    /// 已经不用了，废弃
+    /// </summary>
     public class TreeNodeModel : ObservableObject
     {
         public string NodeID { get; set; }
