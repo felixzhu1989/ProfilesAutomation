@@ -12,7 +12,6 @@ D:\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\GalaSoft.MvvmLight.Extras.pd
 D:\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\GalaSoft.MvvmLight.Extras.xml
 D:\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
 D:\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\GalaSoft.MvvmLight.Platform.xml
-D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.AssemblyReference.cache
 D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\View\MainView.g.cs
 D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\App.g.cs
 D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -26,8 +25,6 @@ D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.G
 D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.CoreCompileInputs.cache
 D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.exe
 D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.pdb
-D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\View\TypeUView.g.cs
-D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\View\TypeUView.baml
 D:\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\Newtonsoft.Json.dll
 D:\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\Newtonsoft.Json.xml
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\ProfilesAutoDrawing.exe.config
@@ -64,3 +61,9 @@ E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\View\ImportData
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.AssemblyReference.cache
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\DataSources\数据模版.xlsx
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\DataSources\标准型材库\U.SLDPRT
+D:\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\DataSources\标准型材库\U.SLDPRT
+D:\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\DataSources\测试数据模版.xlsx
+D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\View\ImportDataView.g.cs
+D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\View\ImportDataView.baml
+D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.AssemblyReference.cache
+D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.CopyComplete

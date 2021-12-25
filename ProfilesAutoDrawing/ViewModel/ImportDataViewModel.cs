@@ -25,14 +25,14 @@ namespace ProfilesAutoDrawing.ViewModel
         public string ExcelPath
         {
             get => excelPath;
-            set { excelPath = value; RaisePropertyChanged(()=> ExcelPath);}
+            set { excelPath = value; RaisePropertyChanged(() => ExcelPath); }
         }
 
         private List<ImportDataModel> importDataList;
         public List<ImportDataModel> ImportDataList
         {
             get => importDataList;
-            set { importDataList = value; RaisePropertyChanged(()=> ImportDataList);}
+            set { importDataList = value; RaisePropertyChanged(() => ImportDataList); }
         }
         #endregion
 
@@ -50,14 +50,21 @@ namespace ProfilesAutoDrawing.ViewModel
         //导入Excel数据
         void ExecuteImportExcel()
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            if((bool)ofd.ShowDialog())
+            try
             {
-                ExcelPath = ofd.FileName;
-                ImportDataFormExcel idfe = new ImportDataFormExcel();
-                ImportDataList = idfe.GetImportDataByExcel(ExcelPath);
+                OpenFileDialog ofd = new OpenFileDialog();
+                if ((bool)ofd.ShowDialog())
+                {
+                    ExcelPath = ofd.FileName;
+                    ImportDataFormExcel idfe = new ImportDataFormExcel();
+                    ImportDataList = idfe.GetImportDataByExcel(ExcelPath);
+                    MessageBox.Show("导入数据完成！");
+                }
             }
-            MessageBox.Show("导入数据完成！");
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }            
         }
 
 
@@ -74,11 +81,18 @@ namespace ProfilesAutoDrawing.ViewModel
         //执行自动绘图入口，将数据列表和excel所在的文件夹地址传递给作图程序
         void ExecuteAutoDrawing()
         {
-            if(!File.Exists(ExcelPath))return;
+            if (!File.Exists(ExcelPath)) return;
             string filePath = Path.GetDirectoryName(ExcelPath);
-            AutoDrawingContext context=new AutoDrawingContext(ImportDataList, filePath);
-            context.ContextInterface();
-            MessageBox.Show("绘图完成！");
+            try
+            {
+                AutoDrawingContext context = new AutoDrawingContext(ImportDataList, filePath);
+                context.ContextInterface();
+                MessageBox.Show("绘图完成！");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }            
             System.Diagnostics.Process.Start("explorer.exe", filePath);
         }
 
