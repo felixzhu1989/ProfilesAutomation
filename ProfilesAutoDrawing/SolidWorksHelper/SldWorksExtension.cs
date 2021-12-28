@@ -10,13 +10,52 @@ namespace ProfilesAutoDrawing.SolidWorksHelper
     /// </summary>
    public static class SldWorksExtension
     {
+
+
+
+        /// <summary>
+        /// 更改孔位的参数
+        /// </summary>
+        /// <param name="swModel"></param>
+        /// <param name="holeDia">直径</param>
+        /// <param name="holeY">Y值</param>
+        /// <param name="totalY">（holeY=0时孔居中）型材宽度/高度</param>
+        /// <param name="holeX">X值</param>
+        /// <param name="featName">特征名字</param>
+        /// <param name="disHoleDia">直径尺寸@草图</param>
+        /// <param name="disHoleX">X值@草图</param>
+        /// <param name="disHoleY">Y值@草图</param>
+        public static void DrawingHole(this ModelDoc2 swModel, double holeDia, double holeY, double totalY, double holeX, string featName, string disHoleDia, string disHoleY, string disHoleX)
+        {
+            PartDoc swPart = swModel as PartDoc;
+            //如果等于0或者X的值等于0则表示没有孔，压缩这个特征
+            if (holeDia == 0d || holeX == 0d)
+            {
+                //压缩特征，不需要了
+                swPart?.FeatureByName(featName).SetSuppression2(0, 2, null); //参数1：1解压，0压缩
+            }
+            else
+            {
+                //解压缩特征
+                swPart?.FeatureByName(featName).SetSuppression2(1, 2, null); //参数1：1解压，0压缩
+                //直径
+                swModel.Parameter(disHoleDia).SystemValue = holeDia / 1000d;
+                //Y方向，如果等于0则默认居中，否则为Y的值
+                swModel.Parameter(disHoleY).SystemValue = holeY == 0d ? totalY / 2000d : holeY / 1000d;
+                //X方向
+                swModel.Parameter(disHoleX).SystemValue = holeX / 1000d;
+
+            }
+        }
+
+
         /// <summary>
         /// 模型打包
         /// </summary>
         /// <param name="swApp">SW程序</param>
         /// <param name="modelPath">模型地址</param>
         /// <param name="itemPath">目标地址</param>
-        public static string PackAndGoFunc(SldWorks swApp, string modelPath, string itemPath, string suffix)
+        public static string PackAndGoFunc(this SldWorks swApp, string modelPath, string itemPath, string suffix)
         {
             int warnings = 0;
             int errors = 0;
