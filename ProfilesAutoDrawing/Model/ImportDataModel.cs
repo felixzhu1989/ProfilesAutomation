@@ -3,6 +3,9 @@ using GalaSoft.MvvmLight;
 
 namespace ProfilesAutoDrawing.Model
 {
+    /// <summary>
+    /// Excel导入数据模版
+    /// </summary>
     public class ImportDataModel: ObservableObject
     {
         //序号

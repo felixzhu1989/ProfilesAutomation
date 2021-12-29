@@ -68,4 +68,3 @@ D:\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.C
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\DataSources\测试数据模版.xlsx
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\bin\Debug\DataSources\标准型材库\E.SLDPRT
 E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.AssemblyReference.cache
-E:\CSharp\repos\ProfilesAutomation\ProfilesAutoDrawing\obj\Debug\ProfilesAutoDrawing.csproj.CopyComplete

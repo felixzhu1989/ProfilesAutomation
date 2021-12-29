@@ -7,7 +7,7 @@ using ProfilesAutoDrawing.Model;
 namespace ProfilesAutoDrawing.SolidWorksHelper
 {
     /// <summary>
-    /// 策略模式上下文,选择以何种方式绘制型材，在这里判断新增的型材
+    /// 策略模式上下文,根据型材类型选择绘图对象
     /// </summary>
     public class AutoDrawingContext
     {

@@ -52,7 +52,12 @@ namespace ProfilesAutoDrawing.ViewModel
         {
             try
             {
-                OpenFileDialog ofd = new OpenFileDialog();
+                OpenFileDialog ofd = new OpenFileDialog
+                {
+                    Filter = "Excel文件|*.xls;*.xlsx",
+                    Title = "选择Excel文件",
+                    Multiselect = false
+                };
                 if ((bool)ofd.ShowDialog())
                 {
                     ExcelPath = ofd.FileName;
