@@ -11,7 +11,7 @@ namespace ProfilesAutoDrawing.SolidWorksHelper
     /// <summary>
     /// E型材自动绘图
     /// </summary>
-  public  class EAutoDrawing:AutoDrawing
+    public class EAutoDrawing : AutoDrawing
     {
         public override void AutoProfiles(List<ImportDataModel> list, string filePath)
         {
@@ -37,9 +37,9 @@ namespace ProfilesAutoDrawing.SolidWorksHelper
                     #region 新的模型需要修改的代码，这里是详细的自动绘图过程
                     //SolidWorks默认单位是米，因此除以1000，后面的d表示double数据类型
                     //长-宽-高
-                    swModel.Parameter("D1@凸台-拉伸1").SystemValue = item.Length / 1000d;
-                    swModel.Parameter("D5@Model").SystemValue = item.Width / 1000d;
-                    swModel.Parameter("D3@Model").SystemValue = item.Height / 1000d;
+                    swModel.ChangeDim("D1@凸台-拉伸1", item.Length);
+                    swModel.ChangeDim("D5@Model", item.Width);
+                    swModel.ChangeDim("D3@Model", item.Height);
 
                     //俯视图
                     swModel.DrawingHole(16d, 0d, 65d, item.ETopHoleLeftX1, "TLX1", "D1@Sketch1", "D2@Sketch1", "D3@Sketch1");

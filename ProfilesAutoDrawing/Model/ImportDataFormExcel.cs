@@ -60,18 +60,18 @@ namespace ProfilesAutoDrawing.Model
                         FrontHoleRightX2 = row["前右X2"] != DBNull.Value ? Convert.ToDouble(row["前右X2"]) : 0.0,
 
                         //U板
-                        UBackHoleLeftX1 = row["U后左X1"] != DBNull.Value ? Convert.ToDouble(row["U后左X1"]) : 0.0,
-                        UBackHoleLeftX2 = row["U后左X2"] != DBNull.Value ? Convert.ToDouble(row["U后左X2"]) : 0.0,
-                        UBackHoleRightX1 = row["U后右X1"] != DBNull.Value ? Convert.ToDouble(row["U后右X1"]) : 0.0,
-                        UBackHoleRightX2 = row["U后右X2"] != DBNull.Value ? Convert.ToDouble(row["U后右X2"]) : 0.0,
-                        ULeftHoleFrontY1 = row["U左前Y1"] != DBNull.Value ? Convert.ToDouble(row["U左前Y1"]) : 0.0,
-                        ULeftHoleFrontY2 = row["U左前Y2"] != DBNull.Value ? Convert.ToDouble(row["U左前Y2"]) : 0.0,
-                        ULeftHoleBackY1 = row["U左后Y1"] != DBNull.Value ? Convert.ToDouble(row["U左后Y1"]) : 0.0,
-                        ULeftHoleBackY2 = row["U左后Y2"] != DBNull.Value ? Convert.ToDouble(row["U左后Y2"]) : 0.0,
-                        URightHoleFrontY1 = row["U右前Y1"] != DBNull.Value ? Convert.ToDouble(row["U右前Y1"]) : 0.0,
-                        URightHoleFrontY2 = row["U右前Y2"] != DBNull.Value ? Convert.ToDouble(row["U右前Y2"]) : 0.0,
-                        URightHoleBackY1 = row["U右后Y1"] != DBNull.Value ? Convert.ToDouble(row["U右后Y1"]) : 0.0,
-                        URightHoleBackY2 = row["U右后Y2"] != DBNull.Value ? Convert.ToDouble(row["U右后Y2"]) : 0.0,
+                        BackHoleLeftX1 = row["U后左X1"] != DBNull.Value ? Convert.ToDouble(row["U后左X1"]) : 0.0,
+                        BackHoleLeftX2 = row["U后左X2"] != DBNull.Value ? Convert.ToDouble(row["U后左X2"]) : 0.0,
+                        BackHoleRightX1 = row["U后右X1"] != DBNull.Value ? Convert.ToDouble(row["U后右X1"]) : 0.0,
+                        BackHoleRightX2 = row["U后右X2"] != DBNull.Value ? Convert.ToDouble(row["U后右X2"]) : 0.0,
+                        LeftHoleFrontY1 = row["U左前Y1"] != DBNull.Value ? Convert.ToDouble(row["U左前Y1"]) : 0.0,
+                        LeftHoleFrontY2 = row["U左前Y2"] != DBNull.Value ? Convert.ToDouble(row["U左前Y2"]) : 0.0,
+                        LeftHoleBackY1 = row["U左后Y1"] != DBNull.Value ? Convert.ToDouble(row["U左后Y1"]) : 0.0,
+                        LeftHoleBackY2 = row["U左后Y2"] != DBNull.Value ? Convert.ToDouble(row["U左后Y2"]) : 0.0,
+                        RightHoleFrontY1 = row["U右前Y1"] != DBNull.Value ? Convert.ToDouble(row["U右前Y1"]) : 0.0,
+                        RightHoleFrontY2 = row["U右前Y2"] != DBNull.Value ? Convert.ToDouble(row["U右前Y2"]) : 0.0,
+                        RightHoleBackY1 = row["U右后Y1"] != DBNull.Value ? Convert.ToDouble(row["U右后Y1"]) : 0.0,
+                        RightHoleBackY2 = row["U右后Y2"] != DBNull.Value ? Convert.ToDouble(row["U右后Y2"]) : 0.0,
 
 
                         //E板
@@ -79,7 +79,6 @@ namespace ProfilesAutoDrawing.Model
                         ETopHoleLeftX2 = row["E俯左X2"] != DBNull.Value ? Convert.ToDouble(row["E俯左X2"]) : 0.0,
                         ETopHoleRightX1 = row["E俯右X1"] != DBNull.Value ? Convert.ToDouble(row["E俯右X1"]) : 0.0,
                         ETopHoleRightX2 = row["E俯右X2"] != DBNull.Value ? Convert.ToDouble(row["E俯右X2"]) : 0.0,
-
                         //如果有扩展在这里加数据，同时ImportDataModel.cs也要增加数据
 
 

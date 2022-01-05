@@ -37,13 +37,15 @@ namespace ProfilesAutoDrawing.SolidWorksHelper
                     #region 新的模型需要修改的代码，这里是详细的自动绘图过程
                     //SolidWorks默认单位是米，因此除以1000，后面的d表示double数据类型
                     //长-宽-高
-                    swModel.Parameter("D1@凸台-拉伸1").SystemValue = item.Length / 1000d;
-                    swModel.Parameter("D1@Model").SystemValue = item.Width / 1000d;
-                    swModel.Parameter("D3@Model").SystemValue = item.Height / 1000d;
+                    swModel.ChangeDim("D1@凸台-拉伸1", item.Length);
+                    swModel.ChangeDim("D1@Model", item.Width);
+                    swModel.ChangeDim("D3@Model", item.Height);
 
                     //俯视图
                     swModel.DrawingHole(item.TopHoleDia,item.TopHoleY,item.Width, item.TopHoleX1, "TX1", "D1@Sketch1", "D2@Sketch1", "D3@Sketch1");
+
                     swModel.DrawingHole( item.TopHoleDia, item.TopHoleY, item.Width, item.TopHoleX2, "TX2", "D1@Sketch2", "D2@Sketch2", "D3@Sketch2");
+
                     swModel.DrawingHole(item.TopHoleDia, item.TopHoleY, item.Width, item.TopHoleX3, "TX3", "D1@Sketch3", "D2@Sketch3", "D3@Sketch3");
                     swModel.DrawingHole( item.TopHoleDia, item.TopHoleY, item.Width, item.TopHoleX4, "TX4", "D1@Sketch4", "D2@Sketch4", "D3@Sketch4");
                     swModel.DrawingHole( item.TopHoleDia, item.TopHoleY, item.Width, item.TopHoleX5, "TX5", "D1@Sketch5", "D2@Sketch5", "D3@Sketch5");
@@ -53,27 +55,28 @@ namespace ProfilesAutoDrawing.SolidWorksHelper
 
                     //前视图
                     swModel.DrawingHole( 16d, 0d, item.Height, item.FrontHoleLeftX1, "FLX1", "D1@Sketch9", "D2@Sketch9", "D3@Sketch9");
+
                     swModel.DrawingHole( 16d, 0d, item.Height, item.FrontHoleLeftX2, "FLX2", "D1@Sketch10", "D2@Sketch10", "D3@Sketch10");
                     swModel.DrawingHole(16d, 0d, item.Height, item.FrontHoleRightX1, "FRX1", "D1@Sketch11", "D2@Sketch11", "D3@Sketch11");
                     swModel.DrawingHole( 16d, 0d, item.Height, item.FrontHoleRightX2, "FRX2", "D1@Sketch12", "D2@Sketch12", "D3@Sketch12");
 
                     //后视图
-                    swModel.DrawingHole(16d, 0d, item.Height, item.UBackHoleLeftX1, "BLX1", "D1@Sketch13", "D2@Sketch13", "D3@Sketch13");
-                    swModel.DrawingHole(16d, 0d, item.Height, item.UBackHoleLeftX2, "BLX2", "D1@Sketch14", "D2@Sketch14", "D3@Sketch14");
-                    swModel.DrawingHole(16d, 0d, item.Height, item.UBackHoleRightX1, "BRX1", "D1@Sketch15", "D2@Sketch15", "D3@Sketch15");
-                    swModel.DrawingHole(16d, 0d, item.Height, item.UBackHoleRightX2, "BRX2", "D1@Sketch16", "D2@Sketch16", "D3@Sketch16");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.BackHoleLeftX1, "BLX1", "D1@Sketch13", "D2@Sketch13", "D3@Sketch13");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.BackHoleLeftX2, "BLX2", "D1@Sketch14", "D2@Sketch14", "D3@Sketch14");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.BackHoleRightX1, "BRX1", "D1@Sketch15", "D2@Sketch15", "D3@Sketch15");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.BackHoleRightX2, "BRX2", "D1@Sketch16", "D2@Sketch16", "D3@Sketch16");
 
                     //左视图
-                    swModel.DrawingHole(16d, 0d, item.Height, item.ULeftHoleBackY1, "LBY1", "D1@Sketch17", "D2@Sketch17", "D3@Sketch17");
-                    swModel.DrawingHole(16d, 0d, item.Height, item.ULeftHoleBackY2, "LBY2", "D1@Sketch18", "D2@Sketch18", "D3@Sketch18");
-                    swModel.DrawingHole(16d, 0d, item.Height, item.ULeftHoleFrontY1, "LFY1", "D1@Sketch19", "D2@Sketch19", "D3@Sketch19");
-                    swModel.DrawingHole(16d, 0d, item.Height, item.ULeftHoleFrontY2, "LFY2", "D1@Sketch20", "D2@Sketch20", "D3@Sketch20");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.LeftHoleBackY1, "LBY1", "D1@Sketch17", "D2@Sketch17", "D3@Sketch17");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.LeftHoleBackY2, "LBY2", "D1@Sketch18", "D2@Sketch18", "D3@Sketch18");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.LeftHoleFrontY1, "LFY1", "D1@Sketch19", "D2@Sketch19", "D3@Sketch19");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.LeftHoleFrontY2, "LFY2", "D1@Sketch20", "D2@Sketch20", "D3@Sketch20");
 
                     //右视图
-                    swModel.DrawingHole(16d, 0d, item.Height, item.URightHoleBackY1, "RBY1", "D1@Sketch21", "D2@Sketch21", "D3@Sketch21");
-                    swModel.DrawingHole(16d, 0d, item.Height, item.URightHoleBackY2, "RBY2", "D1@Sketch22", "D2@Sketch22", "D3@Sketch22");
-                    swModel.DrawingHole(16d, 0d, item.Height, item.URightHoleFrontY1, "RFY1", "D1@Sketch23", "D2@Sketch23", "D3@Sketch23");
-                    swModel.DrawingHole(16d, 0d, item.Height, item.URightHoleFrontY2, "RFY2", "D1@Sketch24", "D2@Sketch24", "D3@Sketch24");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.RightHoleBackY1, "RBY1", "D1@Sketch21", "D2@Sketch21", "D3@Sketch21");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.RightHoleBackY2, "RBY2", "D1@Sketch22", "D2@Sketch22", "D3@Sketch22");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.RightHoleFrontY1, "RFY1", "D1@Sketch23", "D2@Sketch23", "D3@Sketch23");
+                    swModel.DrawingHole(16d, 0d, item.Height, item.RightHoleFrontY2, "RFY2", "D1@Sketch24", "D2@Sketch24", "D3@Sketch24");
 
 
                     #endregion

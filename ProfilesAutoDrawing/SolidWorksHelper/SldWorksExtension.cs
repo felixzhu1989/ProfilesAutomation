@@ -10,9 +10,6 @@ namespace ProfilesAutoDrawing.SolidWorksHelper
     /// </summary>
    public static class SldWorksExtension
     {
-
-
-
         /// <summary>
         /// 更改孔位的参数
         /// </summary>
@@ -32,22 +29,50 @@ namespace ProfilesAutoDrawing.SolidWorksHelper
             if (holeDia == 0d || holeX == 0d)
             {
                 //压缩特征，不需要了
-                swPart?.FeatureByName(featName).SetSuppression2(0, 2, null); //参数1：1解压，0压缩
+                swPart.Suppress(featName);
             }
             else
             {
                 //解压缩特征
-                swPart?.FeatureByName(featName).SetSuppression2(1, 2, null); //参数1：1解压，0压缩
+                swPart.UnSuppress(featName);
                 //直径
-                swModel.Parameter(disHoleDia).SystemValue = holeDia / 1000d;
+                swModel.ChangeDim(disHoleDia, holeDia);
                 //Y方向，如果等于0则默认居中，否则为Y的值
-                swModel.Parameter(disHoleY).SystemValue = holeY == 0d ? totalY / 2000d : holeY / 1000d;
+                double yDis = holeY == 0d ? totalY / 2d : holeY;
+                swModel.ChangeDim(disHoleY, yDis);
                 //X方向
-                swModel.Parameter(disHoleX).SystemValue = holeX / 1000d;
-
+                swModel.ChangeDim(disHoleX, holeX);
             }
         }
 
+        /// <summary>
+        /// 更改尺寸，int数量
+        /// </summary>
+        public static void ChangeDim(this ModelDoc2 swModel, string dimName, int intValue)
+        {
+            swModel.Parameter(dimName).SystemValue = intValue;
+        }
+        /// <summary>
+        /// 更改尺寸，double距离
+        /// </summary>
+        public static void ChangeDim(this ModelDoc2 swModel, string dimName, double dblValue)
+        {
+            swModel.Parameter(dimName).SystemValue = dblValue / 1000d;
+        }
+        /// <summary>
+        /// 压缩特征
+        /// </summary>
+        public static void Suppress(this PartDoc swPart, string featureName)
+        {
+            swPart.FeatureByName(featureName).SetSuppression2(0, 2, null);
+        }
+        /// <summary>
+        /// 解压特征
+        /// </summary>
+        public static void UnSuppress(this PartDoc swPart, string featureName)
+        {
+            swPart.FeatureByName(featureName).SetSuppression2(1, 2, null);
+        }
 
         /// <summary>
         /// 模型打包

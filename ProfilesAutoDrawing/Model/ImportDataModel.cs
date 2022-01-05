@@ -1,5 +1,4 @@
-﻿using System;
-using GalaSoft.MvvmLight;
+﻿using GalaSoft.MvvmLight;
 
 namespace ProfilesAutoDrawing.Model
 {
@@ -53,20 +52,20 @@ namespace ProfilesAutoDrawing.Model
 
         //U板
         //后视图孔
-        public double UBackHoleLeftX1 { get; set; }
-        public double UBackHoleLeftX2 { get; set; }
-        public double UBackHoleRightX1 { get; set; }
-        public double UBackHoleRightX2 { get; set; }
+        public double BackHoleLeftX1 { get; set; }
+        public double BackHoleLeftX2 { get; set; }
+        public double BackHoleRightX1 { get; set; }
+        public double BackHoleRightX2 { get; set; }
         //左视图孔
-        public double ULeftHoleFrontY1 { get; set; }
-        public double ULeftHoleFrontY2 { get; set; }
-        public double ULeftHoleBackY1 { get; set; }
-        public double ULeftHoleBackY2 { get; set; }
+        public double LeftHoleFrontY1 { get; set; }
+        public double LeftHoleFrontY2 { get; set; }
+        public double LeftHoleBackY1 { get; set; }
+        public double LeftHoleBackY2 { get; set; }
         //右视图孔
-        public double URightHoleFrontY1 { get; set; }
-        public double URightHoleFrontY2 { get; set; }
-        public double URightHoleBackY1 { get; set; }
-        public double URightHoleBackY2 { get; set; }
+        public double RightHoleFrontY1 { get; set; }
+        public double RightHoleFrontY2 { get; set; }
+        public double RightHoleBackY1 { get; set; }
+        public double RightHoleBackY2 { get; set; }
 
         //E板
         //俯视
