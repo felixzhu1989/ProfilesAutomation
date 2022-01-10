@@ -4,35 +4,66 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProfilesAutoDrawing.View"
-        mc:Ignorable="d" Icon="../DataSources/profiles.ico"
+        mc:Ignorable="d"
+        Icon="../DataSources/profiles.ico"
         DataContext="{Binding Source={StaticResource Locator},
                                 Path=ImportData}"
-        Title="型材自动绘图" Height="800" Width="1280"
+        Title="型材自动绘图"
+        Height="800"
+        Width="1280"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <GroupBox Header="导入Excel数据" Margin="5" Grid.Row="0"
-                  >
+        <GroupBox Header="导入Excel数据"
+                  Margin="5"
+                  Grid.Row="0">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Excel文件地址："/>
-                <TextBlock Width="600" Text="{Binding ExcelPath}"/>
-                <Button Content="浏览Excel文件" 
-                        Background="DeepSkyBlue" BorderBrush="DeepSkyBlue"
-                        Foreground="White" Width="100" Margin="10,0,5,0"
+                <TextBlock Text="Excel文件地址：" />
+                <TextBlock Width="600"
+                           Text="{Binding ExcelPath}" />
+                <Button Content="浏览Excel文件"
+                        Background="DeepSkyBlue"
+                        BorderBrush="DeepSkyBlue"
+                        Foreground="White"
+                        Width="100"
+                        Margin="10,0,5,0"
                         ToolTip="点击按钮，浏览选择Excel文件，点击确定按钮，加载Excel中的数据。"
-                        Command="{Binding ImportExcel}"/>
-                <Button Content="自动绘图" 
-                        Background="Green" BorderBrush="Green"
-                        Foreground="White" Width="100" Margin="5,0,5,0"
+                        Command="{Binding ImportExcel}" />
+                <Button Content="自动绘图"
+                        Background="Green"
+                        BorderBrush="Green"
+                        Foreground="White"
+                        Width="100"
+                        Margin="5,0,5,0"
                         ToolTip="点击按钮，自动打开SolidWorks批量绘图，模型将保存在Excel所在的文件夹中。"
-                        Command="{Binding AutoDrawing}"/>
+                        Command="{Binding AutoDrawing}" />
             </StackPanel>
         </GroupBox>
-        <DataGrid Margin="5" Grid.Row="1"
-                  IsReadOnly="True" RowHeaderWidth="0"
+        <GroupBox Header="选择文件夹导出视图图片"
+                  Margin="5"
+                  Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="文件夹地址：" />
+                <TextBlock Width="600"
+                           Text="{Binding SwFilePath}" />
+                <Button Content="浏览SW文件夹"
+                        Background="DarkCyan"
+                        BorderBrush="DarkCyan"
+                        Foreground="White"
+                        Width="100"
+                        Margin="28,0,5,0"
+                        ToolTip="点击按钮，浏览选择SolidWorks所在的文件，点击确定按钮，自动开始导出视图图片。"
+                        Command="{Binding ExportBmp}" />
+            </StackPanel>
+        </GroupBox>
+        <DataGrid Margin="5"
+                  Grid.Row="2"
+                  IsReadOnly="True"
+                  RowHeaderWidth="0"
                   CanUserAddRows="False"
                   HorizontalScrollBarVisibility="Visible"
                   VerticalScrollBarVisibility="Visible"

@@ -34,6 +34,14 @@ namespace ProfilesAutoDrawing.ViewModel
             get => importDataList;
             set { importDataList = value; RaisePropertyChanged(() => ImportDataList); }
         }
+
+        private string swFilePath;
+        public string SwFilePath
+        {
+            get => swFilePath;
+            set { swFilePath = value; RaisePropertyChanged(() => SwFilePath); }
+        }
+
         #endregion
 
         #region 按钮对应的命令
@@ -69,7 +77,7 @@ namespace ProfilesAutoDrawing.ViewModel
             catch (System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }            
+            }
         }
 
 
@@ -97,8 +105,35 @@ namespace ProfilesAutoDrawing.ViewModel
             catch (System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }            
+            }
             System.Diagnostics.Process.Start("explorer.exe", filePath);
+        }
+
+
+        private RelayCommand exportBmp;
+        public RelayCommand ExportBmp
+        {
+            get
+            {
+                if (exportBmp == null) return new RelayCommand(ExecuteExportBmp);
+                return exportBmp;
+            }
+            set => exportBmp = value;
+        }
+        /// <summary>
+        /// 导出BMP视图
+        /// </summary>
+        private void ExecuteExportBmp()
+        {
+            System.Windows.Forms.FolderBrowserDialog dialog = new System.Windows.Forms.FolderBrowserDialog();
+            dialog.Description = "请选择SolidWorks文件所在文件夹";
+            if (dialog.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
+            if (string.IsNullOrEmpty(dialog.SelectedPath)) return;
+            SwFilePath = dialog.SelectedPath;
+            var files = Directory.GetFiles(SwFilePath, "*.SLDPRT");
+            ExportBmpFiles epf = new ExportBmpFiles();
+            epf.ExportBmp(files);
+            System.Diagnostics.Process.Start("explorer.exe", SwFilePath);
         }
 
         #endregion
